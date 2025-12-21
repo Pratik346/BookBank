@@ -1,0 +1,129 @@
+<%layout("/layouts/boilerplate")%>
+<style>
+    #filters{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:space-evenly;
+        margin-bottom:2rem;
+    }
+    .filter{
+        margin-right:  1rem;
+        margin-top: 1rem;
+        text-align: center;
+        opacity:0.5;
+    }
+    .filter:hover{
+        opacity: 1;
+        cursor: pointer;
+    }
+    form button{
+        width:2rem;
+        border:none;
+    }
+    </style>
+<div id="filters" >
+        <form action="/book" method="get">
+            <input type="hidden" name="category" value="Fiction" >
+            <button type="submit" class="filter">
+            <i class="fa-solid fa-rocket"></i>
+            </button>
+            <p>Fiction</p>
+            
+        </form>
+        <form  action="/book" method="get">
+            <input type="hidden" name="category" value="Non_Fiction" >
+            <button type="submit" class="filter">
+            <i class="fa-solid fa-lightbulb"></i>
+            </button>
+            <p>Non_Fiction</p>
+            
+        </form>
+        <form action="/book" method="get">
+            <input type="hidden" name="category" value="Science" >
+            <button type="submit" class="filter">
+            <i class="fa-solid fa-atom"></i>
+            </button>
+            <p>Science</p>
+            
+        </form>
+        <form action="/book" method="get">
+            <input type="hidden" name="category" value="Education" >
+            <button type="submit" class="filter">
+            <i class="fa-solid fa-graduation-cap"></i>
+            </button>
+            <p>Education</p>
+        </form>
+        <form action="/book" method="get">
+            <input type="hidden" name="category" value="Technology" >
+            <button type="submit" class="filter">
+            <i class="fa-solid fa-laptop-code"></i>
+            </button>
+            <p>Technology</p>
+            
+        </form>
+        <form  action="/book" method="get">
+            <input type="hidden" name="category" value="Children" >
+            <button type="submit" class="filter">
+            <i class="fa-solid fa-child"></i>
+            </button>
+            <p>Children</p>
+        </form>
+        <form action="/book" method="get">
+            <input type="hidden" name="category" value="Biography" >
+            <button type="submit" class="filter">
+            <i class="fa-solid fa-book"></i>
+            </button>
+            <p>Biography</p>
+        </form>
+        <form action="/book" method="get">
+            <input type="hidden" name="category" value="Comics" >
+            <button type="submit" class="filter">
+            <i class="fa-solid fa-book-open"></i>
+            </button>
+            <p>Comics</p>
+        </form>
+        <form action="/book" method="get">
+            <input type="hidden" name="category" value="Religion" >
+            <button type="submit" class="filter">
+            <i class="fa-solid fa-hands-praying"></i>
+            </button>
+            <p>Religion</p>
+        </form>
+        <form action="/book" method="get">
+            <input type="hidden" name="category" value="Arts" >
+            <button type="submit" class="filter">
+            <i class="fa-solid fa-earth-europe"></i>
+            </button>
+            <p>Arts</p>
+        </form>
+          <form action="/book" method="get">
+            <input type="hidden" name="category" value="Mathematics" >
+            <button type="submit" class="filter">
+            <i class="fa-solid fa-calculator"></i>
+            </button>
+            <p>Mathematics</p>
+        </form>
+              <form action="/book" method="get">
+            <input type="hidden" name="category" value="Others" >
+            <button type="submit" class="filter">
+          <i class="fa-solid fa-book-atlas"></i>
+            </button>
+            <p>Others</p>
+        </form>
+        </div>
+    <h2 class="underline offset-5">All Books</h2>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+           <%for(let book of allbooks){%>
+        <a href="/book/<%=book._id%>" class="book-link">
+    <div class="card col book-card" style="width: 18rem;">
+  <img src="<%=book.imageUrl%>" class="card-img-top" alt="Book image" style="width: 18rem;" >
+  <div class="card-img-overlay">Books</div>
+  <div class="card-body">
+    <p class="card-text"><b><%=book.title%></b><br>
+       &#8377;<%=book.price.toLocaleString("en-IN")%><br> 
+    </p>
+  </div>
+</div>
+</a>
+<%}%>
+</div>

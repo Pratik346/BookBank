@@ -1,0 +1,68 @@
+<%layout("/layouts/boilerplate")%>
+<body>
+    <h3 class="underline">Edit Book Information</h3>
+    <form method="post" action="/book/<%=book._id%>?_method=PUT" novalidate class="needs-validation">
+        <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input name="title" value="<%=book.title%>" type="text" class="form-control" id="title" required/>
+         <div class="valid-feedback">ok</div>
+        <div class="invalid-feedback">Title is required</div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+         <textarea name="description"  type="text" id="description" class="form-control" required><%=book.description%></textarea>
+          <div class="valid-feedback">ok</div>
+        <div class="invalid-feedback">Description is required</div>
+         </div>
+        
+        <div class="mb-3">
+        <label for="author" class="form-label">Author</label>
+        <input name="author" value="<%=book.author%>" type="text" class="form-control" id="author" required/>
+         <div class="valid-feedback">ok</div>
+        <div class="invalid-feedback">Author's name is required</div>
+        </div>
+        
+        <div class="mb-3">
+         <label for="price" class="form-label">Price</label>
+         <input name="price" value="<%=book.price%>" type="number" class="form-control" id="price" min="0" required/>
+            <div class="valid-feedback">ok</div>
+        <div class="invalid-feedback">Enter a valid Price</div>
+         </div>
+        
+        <div class="mb-3">
+            <label for="img" class="form-label">Image Link/URL</label>
+         <input name="imageUrl" value="<%=book.imageUrl%>" type="text" id="img" class="form-control" required/>
+          <div class="valid-feedback">ok</div>
+        <div class="invalid-feedback">Image Link is required</div>
+         </div>
+            <div class="mb-3">
+            <select name="category" class="form-select" required>
+                <option value="">Select Category</option>
+                <option value="Fiction">Fiction</option>
+                <option value="Non_Fiction">Non_Fiction</option>
+                <option value="Science">Science</option>
+                <option value="Education">Education</option>
+                <option value="Technology">Technology</option>
+                <option value="Comics">Comics</option>
+                <option value="Biography">Biography</option>
+                <option value="Religion">Religion</option>
+                <option value="Arts">Arts</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="Children">Children</option>
+                 <option value="Others">Others</option>
+            </select>
+            <div class="valid-feedback">ok</div>
+            <div class="invalid-feedback">Category is required</div>
+        </div>
+        <div class="mb-3">
+            <label for="quantity" class="form-label">Quantity</label>
+         <input name="quantity" value="<%=book.quantity%>" type="Number" min="1" id="quantity" class="form-control" required/>
+        <div class="valid-feedback">ok</div>
+        <div class="invalid-feedback">Valid Quantity is required</div>
+         </div>
+        
+        <button class="btn btn-primary">Edit</button>
+        <br>
+    </form>
+</body>
+</html>

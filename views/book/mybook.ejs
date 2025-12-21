@@ -1,0 +1,24 @@
+<%layout("/layouts/boilerplate")%>
+    <h2 class="underline offset-5">My Books</h2>
+    <%if(mybooks.length===0){%>
+        <div>
+        <p class="offset-5">You have not added any books yet</p>
+        <p class="offset-5">Do you want to resale a book?</p>
+        </div>
+        <a class="btn btn-sm btn-primary offset-5" href="/book/new">Resale Book</a>
+    <%}%>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+           <%for(let book of mybooks){%>
+        <a href="/book/<%=book._id%>" class="book-link">
+    <div class="card col book-card" style="width: 18rem;">
+  <img src="<%=book.imageUrl%>" class="card-img-top" alt="Book image" style="width: 18rem;" >
+  <div class="card-img-overlay">Books</div>
+  <div class="card-body">
+    <p class="card-text"><b><%=book.title%></b><br>
+       &#8377;<%=book.price.toLocaleString("en-IN")%><br> 
+    </p>
+  </div>
+</div>
+</a>
+<%}%>
+</div>

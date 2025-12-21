@@ -1,0 +1,12 @@
+<%layout("/layouts/boilerplate")%>
+<div class="card mt-5 offset-4" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title underline">Seller Details</h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary">Seller Name:<%=book.owner.username%></h6>
+    <p>Contact No:<%=book.owner.contactno%></p>
+    <p>Email:<%=book.owner.email%></p>
+    <p>Address:<%=book.owner.address%></p>
+    <p>Nationality:<%=book.owner.nationality%></p>
+    <a class="btn btn-sm btn-primary" href="/book/<%=book._id%>">Back</a>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height:100vh;
+    background-color: aqua !important;
+}
+.container{
+    flex:1;
+}
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+.f-info-links a{
+    text-decoration: none;
+    color:black
+}
+.f-info-links,.f-info-socials,.f-info-brand{
+    width:100%;
+}
+.f-info-socials i{
+    font-size:1.2rem;
+    margin-right: 1rem;
+}
+.nav-link{
+    color:black !important;
+}
+.f-info{
+    height:5rem;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: #ebebeb;
+}
+.book-card{
+    border: none !important;
+    margin-bottom:2rem;
+    
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    width:100% !important;
+    object-fit: cover !important;
+}
+.book-link{
+    text-decoration: none;
+}
+.card-img-overlay{
+    opacity:0;
+}
+.card-img-overlay:hover{
+    opacity:0.2;
+    background-color:white;
+}
+.underline{
+    text-decoration: underline;
+}
+.show-img{
+    height:100vh;
+}
+.reviewstar{
+    color: black;
+    background-color: yellow;
+}

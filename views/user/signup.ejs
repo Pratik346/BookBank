@@ -1,0 +1,57 @@
+<%layout("/layouts/boilerplate")%>
+<div class="row mt-3">
+    <h2 class="col-6 offset-3 underline">Signup on BookBank</h2>
+    <div class="col-6 offset-3">
+        <form action="/signup" method="post" novalidate class="needs-validation">
+        <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input name="username" placeholder="Enter Username" type="text" class="form-control" id="username" required/>
+        <div class="valid-feedback">ok</div>
+        <div class="invalid-feedback">Username is required</div>
+        </div>
+        <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input name="email" placeholder="Enter Email" type="text" class="form-control" id="email" required/>
+        <div class="valid-feedback">ok</div>
+        <div class="invalid-feedback">Email is required</div>
+        </div>
+        <div class="mb-3">
+        <label for="contactno" class="form-label">Contact No.</label>
+        <input name="contactno" placeholder="Enter Contact No." type="text" class="form-control" id="contactno" required/>
+        <div class="valid-feedback">ok</div>
+        <div class="invalid-feedback">Contact No. is required</div>
+        </div>
+        <div class="mb-3">
+        <label for="address" class="form-label">Address</label>
+        <input name="address" placeholder="Enter Address" type="text" class="form-control" id="address" required/>
+        <div class="valid-feedback">ok</div>
+        <div class="invalid-feedback">Address is required</div>
+        </div>
+          <div class="mb-3">
+        <label for="birth" class="form-label">Date of Birth</label>
+        <input name="dateofbirth" placeholder="DD-MM-YYYY" type="text" class="form-control" id="birth" required/>
+        <div class="valid-feedback">ok</div>
+        <div class="invalid-feedback">DOB is required</div>
+        </div>
+        <div class="mb-3">
+        <label for="blood" class="form-label">Bloodgroup</label>
+        <input name="bloodgroup" placeholder="Enter Bloodgroup" type="text" class="form-control" id="blood" required/>
+        <div class="valid-feedback">ok</div>
+        <div class="invalid-feedback">Bloodgroup is required</div>
+        </div>
+        <div class="mb-3">
+        <label for="nationality" class="form-label">Nationality</label>
+        <input name="nationality" placeholder="Enter Nationality" type="text" class="form-control" id="nationality" required/>
+        <div class="valid-feedback">ok</div>
+        <div class="invalid-feedback">Nationality is required</div>
+        </div>
+        <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input name="password" placeholder="Enter Password" type="password" class="form-control" id="password" required/>
+        <div class="valid-feedback">ok</div>
+        <div class="invalid-feedback">Password is required</div>
+        </div>
+        <button class="btn btn-success">Signup</button>
+        </form>
+    </div>
+</div>
