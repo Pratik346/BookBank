@@ -1,14 +1,58 @@
-<footer>
-    <div class="f-info">
-        <div class="f-info-socials">
-            <i class="fa-brands fa-square-facebook"></i>
-            <i class="fa-brands fa-square-instagram"></i>
-            <i class="fa-brands fa-linkedin"></i>
+<style>
+    .footer {
+        background-color: #f8f9fa;
+        color: #333;
+      }
+      
+      .footer-title {
+        font-weight: 600;
+        margin-bottom: 0.8rem;
+      }
+      
+      .footer-text {
+        font-size: 0.9rem;
+      }
+      
+      .footer a {
+        color: #333;
+        text-decoration: none;
+      }
+      
+      .footer a:hover {
+        color: #0d6efd;
+      }
+      
+      .footer i {
+        font-size: 1.3rem;
+      }
+</style>
+<footer class="footer mt-5">
+    <div class="container py-4">
+      <div class="row text-center text-md-start">
+        <div class="col-md-4 mb-3">
+          <h5 class="footer-title">BookBank</h5>
+          <p class="footer-text">
+            A platform for students to buy, sell, and exchange books easily.
+          </p>
         </div>
-        <div class="f-info-brand">@BookBank-Built for students and learners</div>
-        <div class="f-info-links">
-            <a href="/privacy">Privacy</a>
-            <a href="/terms">Terms</a>
+        <div class="col-md-4 mb-3">
+          <h6 class="footer-title">Quick Links</h6>
+          <ul class="list-unstyled">
+            <li><a href="/book">Books</a></li>
+            <li><a href="/book/new">Add Book</a></li>
+          </ul>
         </div>
+        <div class="col-md-4 mb-3">
+          <h6 class="footer-title">Connect</h6>
+          <a href="#" class="me-3"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="me-3"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+      <hr>
+      <div class="text-center">
+        <small>© <%= new Date().getFullYear() %> BookBank | Built with ❤️ by Students</small>
+      </div>
     </div>
-</footer>
+  </footer>
+  

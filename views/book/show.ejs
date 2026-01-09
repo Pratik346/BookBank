@@ -2,8 +2,8 @@
 <body>
     <h2 class="underline offset-2">Book Details</h2>
     <div class="row">
-      <div class="col-8 offset-2">
-          <div class="card col-6 book-card">
+      <div class="col-12 justify-content-center">
+          <div class="card col-12 col-sm-10 col-md-8 col-lg-6 book-card">
   <img src="<%=book.imageUrl%>" class="card-img-top show-img" alt="Book-image">
   <div class="card-body">
     <p class="card-text offset-2">
@@ -30,7 +30,7 @@
   <%}%>
     <hr>
     <%if(curruser){%>
-    <div class="col-8 offset-3">
+    <div class="col-12 col-sm-10 col-md-8 col-lg-6 justify-content-center">
       <h4>Write a Review</h4>
       <form action="/book/<%=book._id%>/reviews" method="post" novalidate class="needs-validation">
     <div class="mb-3 mt-3">

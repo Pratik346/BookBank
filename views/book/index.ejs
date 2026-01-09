@@ -1,27 +1,46 @@
 <%layout("/layouts/boilerplate")%>
 <style>
-    #filters{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content:space-evenly;
-        margin-bottom:2rem;
-    }
-    .filter{
-        margin-right:  1rem;
-        margin-top: 1rem;
-        text-align: center;
-        opacity:0.5;
-    }
-    .filter:hover{
-        opacity: 1;
-        cursor: pointer;
-    }
-    form button{
-        width:2rem;
-        border:none;
-    }
+    #filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 0.1rem;
+  justify-items: center;
+  margin: 1.5rem 0;
+}
+
+#filters form {
+  text-align: center;
+}
+
+.filter {
+  border: none;
+  background: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.filter:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+#filters p {
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
     </style>
-<div id="filters" >
+        <button class="btn btn-outline-dark d-md-none mb-2"
+        data-bs-toggle="collapse"
+        data-bs-target="#filterMenu">
+  <i class="fa-solid fa-bars"></i> Categories
+</button>
+<div id="filterMenu" class="collapse d-md-block">
+<div id="filters"  >
+
         <form action="/book" method="get">
             <input type="hidden" name="category" value="Fiction" >
             <button type="submit" class="filter">
@@ -111,19 +130,24 @@
             <p>Others</p>
         </form>
         </div>
-    <h2 class="underline offset-5">All Books</h2>
-    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
-           <%for(let book of allbooks){%>
-        <a href="/book/<%=book._id%>" class="book-link">
-    <div class="card col book-card" style="width: 18rem;">
-  <img src="<%=book.imageUrl%>" class="card-img-top" alt="Book image" style="width: 18rem;" >
-  <div class="card-img-overlay">Books</div>
-  <div class="card-body">
-    <p class="card-text"><b><%=book.title%></b><br>
-       &#8377;<%=book.price.toLocaleString("en-IN")%><br> 
-    </p>
+        </div>
+    <h2 class="underline text-center mb-4">All Books</h2>
+    <div class="container">
+        <div class="row g-4">
+    <% for(let book of allbooks){ %>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <a href="/book/<%= book._id %>" class="book-link">
+            <div class="card book-card h-100">
+              <img src="<%= book.imageUrl %>" class="card-img-top" alt="Book image">
+              <div class="card-body">
+                <p class="card-text">
+                  <strong><%= book.title %></strong><br>
+                  ₹ <%= book.price.toLocaleString("en-IN") %>
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% } %>  
   </div>
-</div>
-</a>
-<%}%>
 </div>
