@@ -2,7 +2,7 @@ require("dotenv").config();
 const express=require("express");
 const app=express();
 const mongoose=require("mongoose");
-const mongourl=process.env.ATLASDBURL;
+const mongourl=process.env.ATLASDB_URL;
 const path=require("path");
 const methodoverride=require("method-override");
 const ejsmate=require("ejs-mate");
